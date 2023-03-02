@@ -1,8 +1,3 @@
-let btn = document.getElementById('delete').onclick = function(){
-    var demo = document.getElementById('delete').value;
-    console.log(demo);
-}
-
 function addUser(e){
     // e.preventdefault();
     var name = document.getElementById('AddUsername').value;
