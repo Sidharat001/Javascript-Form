@@ -82,7 +82,8 @@ function addUser(e){
         dataType: "json",
         success: function (data) {
             document.getElementById('SuccessMsg').innerHTML = this.responseText;
-            console.log(data);
+            // console.log(data);
+            __gatdata();
         },
         error: function (err) {
             console.log(err);
@@ -91,14 +92,14 @@ function addUser(e){
 }
 
 //get data from database by using jquery
-$(document).ready(function () {
+
+function __gatdata(){
     $.ajax({
         type: "GET",
         url: "record.php",
-        dataType: "html",
-        async: false,
         success: function (data) {
-            $("#GetData_ROw").html(response);
+            $("#GetData_ROw").html(data);
         }
     });
-});
+}
+

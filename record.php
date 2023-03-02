@@ -27,12 +27,24 @@ if ($result->num_rows > 0) {
         echo "<td>".$data['last_name']."</td>";
         echo "<td>".$data['email']."</td>";
         echo "<td>".$data['address']."</td>";
-        echo "<td><ul><li><button id='deleteData' class='btn btn-primary btn-sm rounded-0' type='button' data-bs-toggle='modal' data-bs-target='#viewModal' title='View'>
-        <i class='fa fa-table'></i>
-        </button></li></ul></td>";
+        echo "<td><ul class='list-inline m-0'>";
+        // view button action 
+        echo "<li class='list-inline-item'>";
+        echo "<button id='deleteData' class='btn btn-primary btn-sm rounded-0' type='button' data-bs-toggle='modal' data-bs-target='#viewModal' title='View'><i class='fa fa-table'></i></button>";
+        echo "</li>";
+        // edit button action
+        echo "<li class='list-inline-item'>";
+        echo "<button class='btn btn-success btn-sm rounded-0' type='button' data-bs-toggle='modal' data-bs-target='#editModal' title='Edit'><i class='fa fa-edit'></i></button>";
+        echo "</li>";
+        // delete button action
+        echo "<li class='list-inline-item'>";
+        echo "<button id='delete' class='btn btn-danger btn-sm rounded-0' type='button' data-bs-toggle='modal' data-bs-target='#deleteModal' title='Delete'><i class='fa fa-trash'></i></button>";
+        echo "</li>";
+
+        echo "</ul></td>";
         echo "</tr>";
     }
 }else{
-    echo "<td>0 Record</td>";
+    echo "<tr><td colspan='8'>0 Record</td></tr>";
 }
 ?>
