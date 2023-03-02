@@ -73,17 +73,17 @@ function addUser(e){
     console.log(user);
 
     // Store User Object In Databse by Jquery 
-    // $.ajax({
-    //     type: "POST",
-    //     url: "http://localhost:3000/users",
-    //     data: JSON.stringify(user),
-    //     contentType: "application/json; charset=utf-8",
-    //     dataType: "json",
-    //     success: function (data) {
-    //         console.log(data);
-    //     },
-    //     error: function (err) {
-    //         console.log(err);
-    //     }
-    // });
+    $.ajax({
+        type: "POST",
+        url: "http://localhost:3000/users",
+        data: JSON.stringify(user),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (data) {
+            console.log(data);
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
 }
