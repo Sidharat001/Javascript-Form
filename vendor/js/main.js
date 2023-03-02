@@ -57,7 +57,7 @@ function addUser(e){
         AddressalertBox.innerHTML = "";
     }
     
-    
+    /*
     var user = {
         name: name,
         lastName: lastName,
@@ -66,15 +66,22 @@ function addUser(e){
         address: address
     }
     console.log(user);
+    */
 
-    // Store User Object In Databse by Jquery 
+    // Store User Object In Databse by Jquery JSON.stringify(user)
     $.ajax({
-        type: "POST",
-        url: "http://localhost:3000/users",
-        data: JSON.stringify(user),
+        type: "GET",
+        url: "/crud/adduser.php",
+        data: {
+            name: name,
+            lastName: lastName,
+            email: email,
+            address: address
+        },
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (data) {
+            document.getElementById('SuccessMsg').innerHTML = this.responseText;
             console.log(data);
         },
         error: function (err) {
@@ -82,3 +89,16 @@ function addUser(e){
         }
     });
 }
+
+//get data from database by using jquery
+$(document).ready(function () {
+    $.ajax({
+        type: "GET",
+        url: "record.php",
+        dataType: "html",
+        async: false,
+        success: function (data) {
+            $("#GetData_ROw").html(response);
+        }
+    });
+});

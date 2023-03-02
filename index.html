@@ -40,14 +40,13 @@
                         <th scope="col">Action</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
+                    <tbody id="GetData_ROw">
+                      <!-- <tr>
                         <th scope="row">1</th>
                         <td>Mark</td>
                         <td>Otto</td>
                         <td>@mdo</td>
                         <td>
-                          <!-- Call to action buttons -->
                           <ul class="list-inline m-0">
                             <li class="list-inline-item">
                               <button class="btn btn-primary btn-sm rounded-0" type="button" data-bs-toggle="modal" data-bs-target="#viewModal" title="View">
@@ -66,7 +65,7 @@
                             </li>
                           </ul>
                         </td>
-                      </tr>
+                      </tr> -->
                     </tbody>
                   </table>
                 </div>
@@ -143,7 +142,7 @@
           <div class="modal-dialog">
           <div class="modal-content">
               <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Add User</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
@@ -187,6 +186,7 @@
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               <button type="button" onclick="addUser()" class="btn btn-primary">Save changes</button>
               </div>
+              <p id="SuccessMsg" class="text-bg-success text-center"></p>
           </div>
           </div>
       </div>
